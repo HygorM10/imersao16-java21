@@ -50,6 +50,6 @@ public record PBKDF2Password(String value, String salt) implements Password {
 
     @Override
     public boolean validate(String password) {
-        return value().equals(hash(password, salt));
+        return value.equals(hash(password, salt));
     }
 }

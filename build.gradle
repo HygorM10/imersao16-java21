@@ -9,10 +9,19 @@ group = 'org.hygorm10'
 version = '0.0.1-SNAPSHOT'
 
 compileJava {
-    options.compilerArgs += ['--enable-preview']
+    options.compilerArgs += '--enable-preview'
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
 }
 
-java {
+compileTestJava {
+    options.compilerArgs += '--enable-preview'
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
+}
+
+test {
+    jvmArgs '--enable-preview'
 }
 
 tasks.withType(JavaExec).configureEach {
